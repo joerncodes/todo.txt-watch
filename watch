@@ -23,12 +23,8 @@ function usage() {
 }
 
 function watch() {
-    clear ; echo "watch ${cmd}" ; echo "--" ; $TODO_FULL_SH  $cmd
-
-    python -m watchdog_exec $TODO_DIR \
-        -s $TODO_FILE \
-        -a "clear ; echo \"watch ${cmd}\" ; echo \"--\" ; ${TODO_FULL_SH} ${cmd}" \
-        -e "clear ; echo \"watch ${cmd}\" ; echo \"--\" ; ${TODO_FULL_SH} ${cmd}"
+    echo \"watch ${cmd}\"
+    ls "$TODO_FILE" | entr -cns "echo \"watch ${cmd}\" ; echo \"--\" ; ${TODO_FULL_SH} ${cmd}"
     exit
 }
 

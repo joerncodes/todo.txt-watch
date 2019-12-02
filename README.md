@@ -4,11 +4,16 @@ Clear terminal and repeat a todo command whenever the todo.txt file changes.
 
 ## Install
 
+1. Install `entr` read https://github.com/eradman/entr/ for more details
 ```
-pip install watchdog
-git clone https://github.com/kynda/todo.txt-watch.git
+brew install entr                # MacOs with Homebrew
+sudo apt-get install entr        # Debian or Ubuntu
+```
+
+2. 
+```
+git clone https://github.com/munkee/todo.txt-watch.git
 ln -s todo.txt-watch/watch $TODOTXT_ACTIONS_DIR/watch
-ln -s todo.txt-watch/w $TODOTXT_ACTIONS_DIR/w
 ```
 
 ## Usage
